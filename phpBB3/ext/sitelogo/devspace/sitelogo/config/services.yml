@@ -1,0 +1,23 @@
+imports:
+    - { resource: alias.yml }
+    - { resource: sitelogo_constants.yml }
+
+services:
+    _defaults:
+        autowire: true
+        bind:
+            $root_path: '%core.root_path%'
+            $slconstants: '%slconstants%'
+            $ext_images_path: '%core.root_path%ext/devspace/sitelogo/adm/style/images'
+        public: true
+
+    devspace.sitelogo.listener:
+        class: devspace\sitelogo\event\listener
+        tags:
+            - { name: event.listener }
+
+    devspace.sitelogo.admin.controller:
+        class: devspace\sitelogo\controller\admin_controller
+
+    devspace.sitelogo.core.functions:
+        class: devspace\sitelogo\core\functions

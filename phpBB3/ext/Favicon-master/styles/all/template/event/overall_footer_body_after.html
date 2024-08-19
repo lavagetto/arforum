@@ -1,0 +1,76 @@
+{% if S_REGISTERED_USER and S_NOTIFICATIONS_DISPLAY and FAVICON_BUBBLE and NOTIFICATIONS_COUNT %}
+	<script>
+		/**
+		 * Mark notification popup rows as read.
+		 *
+		 * @param {jQuery} $popup jQuery object(s) to mark read.
+		 * @param {int} unreadCount The new unread notifications count.
+		 */
+		phpbb.markNotifications = function($popup, unreadCount) {
+			// Remove the unread status.
+			$popup.removeClass('bg2');
+			$popup.find('a.mark_read').remove();
+
+			// Update the notification link to the real URL.
+			$popup.each(function() {
+				var link = $(this).find('a');
+				link.attr('href', link.attr('data-real-url'));
+			});
+
+			// Update the unread count.
+			$('strong', '#notification_list_button').html(unreadCount);
+			// Remove the Mark all read link and hide notification count if there are no unread notifications.
+			if (!unreadCount) {
+				$('#mark_all_notifications').remove();
+				$('#notification_list_button > strong').addClass('hidden');
+			}
+
+			// Update page title
+			/*var $title = $('title');
+			var originalTitle = $title.text().replace(/(\((\d+)\))/, '');
+			$title.text((unreadCount ? '(' + unreadCount + ')' : '') + originalTitle);*/
+		};
+
+		function set_tinycon(unreadCount) {
+			Tinycon.setOptions({  
+					width: 7,  
+					height: 9,  
+					font: '10px arial',  
+					colour: '#ffffff',  
+					background: '#D31141',  
+					fallback: true  
+				});
+				Tinycon.setBubble(unreadCount); 
+		}
+		function reset_tinycon() {
+			Tinycon.setOptions({  
+					width: 0,  
+					height: 0,  
+					font: '0px arial',  
+					colour: 'transparent',  
+					background: 'transparent',  
+					fallback: false
+				});
+				Tinycon.setBubble(0); 
+		}
+		/*{% if NOTIFICATIONS_COUNT %}*/
+			$(document).ready(function() {
+				set_tinycon({{ NOTIFICATIONS_COUNT }});
+			});
+
+			$(document).on('click', '#mark_all_notifications a', function() {
+				reset_tinycon();
+			});
+
+			$(document).on('click', '#notification_list a.mark_read', function() {
+				Tinycon.reset();
+				var unreadCount = Number($('#notification_list_button strong').html()) - 1;
+				if (unreadCount > 0) {
+					set_tinycon(unreadCount);
+				} else {
+					reset_tinycon();
+				}
+			});
+		/*{% endif %}*/
+	</script>
+{% endif %}

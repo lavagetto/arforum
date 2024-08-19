@@ -1,0 +1,32 @@
+<!-- IF S_SO_STATUS -->
+	<!-- IF S_SO_TYPE == '0' || postrow.S_FIRST_ROW -->
+
+		<div id="social">
+			<!-- IF S_SO_FACEBOOK -->
+				<a class="facebook-button global-button js-newWindow" data-popup="width=580,height=325" href="{postrow.U_FACEBOOK}" title="{L_SHARE_ON_FACEBOOK}"></a>
+			<!-- ENDIF -->
+
+			<!-- IF S_SO_TWITTER -->
+				<a class="twitter-button global-button js-newWindow" data-popup="width=550,height=300" href="{postrow.U_TWITTER}" title="{L_SHARE_ON_TWITTER}"></a>
+			<!-- ENDIF -->
+
+			<!-- IF S_SO_REDDIT -->
+				<a class="reddit-button global-button" href="{postrow.U_REDDIT}" title="{L_SHARE_ON_REDDIT}" onclick="target='_blank';"></a>
+			<!-- ENDIF -->
+
+			<!-- IF S_SO_VK -->
+				<a class="vk-button global-button js-newWindow" href="{postrow.U_VK}" title="{L_SHARE_ON_VK}" data-popup="width=607,height=510"></a>
+			<!-- ENDIF -->
+
+			<!-- IF S_SO_TUMBLR -->
+				<a class="tumblr-button global-button js-newWindow" href="{postrow.U_TUMBLR}" title="{L_SHARE_ON_TUMBLR}" data-popup="width=542,height=460"></a>
+			<!-- ENDIF -->
+
+			<!-- IF S_SO_WHATSAPP -->
+				<a class="whatsapp-button global-button" href="{postrow.U_WHATSAPP}" title="{L_SHARE_ON_WHATSAPP}" onclick="target='_blank';"></a>
+			<!-- ENDIF -->
+
+		</div>
+
+	<!-- ENDIF -->
+<!-- ENDIF -->

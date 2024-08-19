@@ -1,0 +1,44 @@
+{% if FOLDER_PERCENT %}
+<script>
+
+(function($) {
+
+	'use strict';
+
+	$.fn.showBar = function() {
+
+		var settings = {
+			folder: 'pmbars:{{ CUR_FOLDER_ID }}',
+			percent: {{ FOLDER_PERCENT }},
+			dangerZone: 80,
+			speed: 1000
+		};
+
+		this.toggleClass('pmbars-danger', (settings.percent > settings.dangerZone));
+
+		if (sessionStorage.getItem(settings.folder)) {
+			this.css('width', settings.percent + '%');
+		} else {
+			this.animate({
+				width: settings.percent + '%'
+			}, settings.speed, function() {
+				sessionStorage.setItem(settings.folder, settings.percent);
+			});
+		}
+
+		return this;
+	};
+
+	var $outer = $('<div class="pmbars-outer"></div>');
+	var $inner = $('<div class="pmbars-inner"></div>');
+
+	$('#viewfolder')
+		.find('p')
+		.filter(':first')
+		.after($outer);
+	$inner.appendTo($outer).showBar();
+
+})(jQuery);
+
+</script>
+{% endif %}

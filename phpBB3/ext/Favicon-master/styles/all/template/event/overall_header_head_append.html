@@ -1,0 +1,17 @@
+{% if FAVICON_EXT == 'ico' %}
+	<link rel="icon" href="{{ BOARD_URL }}ext/tatiana5/favicon/favicon.ico" sizes="any" />
+{% elseif FAVICON_EXT == 'png' %}
+	<link rel="icon" type="image/png" href="{{ BOARD_URL }}ext/tatiana5/favicon/favicon.png" sizes="any" />
+{% endif %}
+
+{% if FAVICON_SVG %}	
+	<link rel="icon" href="{{ BOARD_URL }}ext/tatiana5/favicon/favicon.svg" type="image/svg+xml" />
+{% endif %}
+	
+{% if FAVICON_APPLE %}	
+	<link rel="apple-touch-icon" href="{{ BOARD_URL }}ext/tatiana5/favicon/apple_touch_icon.png" />
+{% endif %}
+
+{% if FAVICON_ANDROID %}	
+	<link rel="manifest" href="{{ BOARD_URL }}ext/tatiana5/favicon/manifest.webmanifest" />
+{% endif %}

@@ -1,0 +1,106 @@
+#social {
+	margin: 20px 10px;
+	text-align: right;
+}
+
+.global-button {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	width: 25px;
+	height: 25px;
+	padding: 0px;
+	text-decoration: none;
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 2em;
+	border-radius: 15px;
+}
+
+.global-button:hover { text-decoration: none; }
+
+.facebook-button {
+	background: #4060A5;
+}
+
+.facebook-button:before {
+	font-family: "FontAwesome";
+	content: "\f09a";
+}
+
+.facebook-button:hover {
+	color: #4060A5;
+	background: #fff;
+}
+
+.twitter-button {
+	background: #00ABE3;
+}
+
+.twitter-button:before {
+	font-family: "FontAwesome";
+	content: "\f099";
+}
+
+.twitter-button:hover {
+	color: #00ABE3;
+	background: #fff;
+}
+
+.reddit-button {
+	background: #ff4500;
+}
+
+.reddit-button:before {
+	font-family: "FontAwesome";
+	content: "\f281";
+}
+
+.reddit-button:hover {
+	color: #ff4500;
+	background: #fff;
+}
+
+.vk-button {
+	background: #4a76a8;
+}
+
+.vk-button:before {
+	font-family: "FontAwesome";
+	content: "\f189";
+}
+
+.vk-button:hover {
+	color: #4a76a8;
+	background: #fff;
+}
+
+.tumblr-button {
+	background: #3a5876;
+}
+
+.tumblr-button:before {
+	font-family: "FontAwesome";
+	content: "\f173";
+}
+
+.tumblr-button:hover {
+	color: #3a5876;
+	background: #fff;
+}
+
+.whatsapp-button {
+	background: #25d366;
+}
+
+.whatsapp-button:before {
+	font-family: "FontAwesome";
+	content: "\f232";
+}
+
+.whatsapp-button:hover {
+	color: #25d366;
+	background: #fff;
+}
