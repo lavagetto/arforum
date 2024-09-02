@@ -1,13 +1,13 @@
 <?php
 /**
 *
-* @package profileSideSwitcher
+* @package profilesideswitcher
 * @copyright (c) 2014 Татьяна5
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
 */
 
-namespace tatiana5\profileSideSwitcher\migrations\v1xx;
+namespace tatiana5\profilesideswitcher\migrations\v1xx;
 
 class v_1_0_0 extends \phpbb\db\migration\migration
 {
@@ -18,7 +18,7 @@ class v_1_0_0 extends \phpbb\db\migration\migration
 
 	static public function depends_on()
 	{
-			return array('\tatiana5\profileSideSwitcher\migrations\v0xx\v_0_0_1');
+			return array('\tatiana5\profilesideswitcher\migrations\v0xx\v_0_0_1');
 	}
 
 	public function update_data()
